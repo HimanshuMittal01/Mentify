@@ -59,7 +59,8 @@ class _RedState extends State<Red> {
 
   String decideWriteUp() {
     // TODO: This has to be the average of last couple of days
-    double previousScores = emojiScoreList.emojiScoreList[-1];
+    double previousScores =
+        emojiScoreList.emojiScoreList[emojiScoreList.emojiScoreList.length - 1];
     if (previousScores > 8) {
       recommendationText =
           "You look energetic, channelize it the best possible way.";
@@ -280,7 +281,7 @@ class _RedState extends State<Red> {
                       child: new EmojiCard(
                         parser: parser,
                         emoji: "smiley",
-                        label: "Coffee",
+                        label: "Great",
                       ),
                     ),
                     InkWell(
@@ -290,7 +291,7 @@ class _RedState extends State<Red> {
                       child: new EmojiCard(
                         parser: parser,
                         emoji: "relieved",
-                        label: "Bread",
+                        label: "Happy",
                       ),
                     ),
                     InkWell(
@@ -300,7 +301,7 @@ class _RedState extends State<Red> {
                       child: new EmojiCard(
                         parser: parser,
                         emoji: "neutral_face",
-                        label: "Fries",
+                        label: "Neutral",
                       ),
                     ),
                     InkWell(
@@ -310,7 +311,7 @@ class _RedState extends State<Red> {
                       child: new EmojiCard(
                         parser: parser,
                         emoji: "pensive",
-                        label: "Oden",
+                        label: "Sad",
                       ),
                     ),
                     InkWell(
@@ -320,7 +321,7 @@ class _RedState extends State<Red> {
                       child: new EmojiCard(
                         parser: parser,
                         emoji: "worried",
-                        label: "Sushi",
+                        label: "Low",
                       ),
                     ),
                   ]
@@ -331,13 +332,17 @@ class _RedState extends State<Red> {
                         fontSize: 16.0,
                       ),
                     ),
-                    Text(
-                      decideWriteUp(),
-                      style: TextStyle(
-                        fontSize: 20.0,
-                      ),
-                    ),
                   ],
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+          Text(
+            decideWriteUp(),
+            style: TextStyle(
+                fontSize: 20.0,
+                fontStyle: FontStyle.italic,
+                color: Colors.black45),
           ),
           SizedBox(
             height: 30.0,

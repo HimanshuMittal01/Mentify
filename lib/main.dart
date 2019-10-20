@@ -10,11 +10,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MLH Hackathon',
+      title: 'Mentify',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'MLH Hackathon'),
+      home: MyHomePage(title: 'Mentify'),
       routes: <String, WidgetBuilder>{
         '/addtodoitem': (BuildContext context) => new AddTodoItem(),
         '/todo': (BuildContext context) => new Todo(),
